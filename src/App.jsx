@@ -12,6 +12,7 @@ import "swiper/css";
 
 
 const Home = lazy(() => import("./pages/Home"));
+const Detail = lazy(() => import("./pages/Detail"));
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Suspense fallback={<Loader />}>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path='/:category/:id' element={<Detail />} />
             </Routes>
           </Suspense>
         </ScrollToTop>
