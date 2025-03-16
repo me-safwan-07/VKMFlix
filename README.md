@@ -160,8 +160,7 @@ This project is licensed under the **MIT License**.
 Developed by:  
 - **Vignish**  
 - **Kirthan**  
-- **Manish**   
-- **Safwan**   
+- **Manish**    
 
 ---
 
