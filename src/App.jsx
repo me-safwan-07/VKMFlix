@@ -9,6 +9,7 @@ import { Loader } from './components/Loader'
 
 import "react-loading-skeleton/dist/skeleton.css";
 import "swiper/css";
+import Footer from './components/Footer'
 
 
 const Home = lazy(() => import("./pages/Home"));
@@ -34,6 +35,7 @@ function App() {
           </Suspense>
         </ScrollToTop>
       </main>
+      <Footer />
     </>
   )
 }
