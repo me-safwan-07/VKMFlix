@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@clerk/clerk-react": "^5.30.4",
     "@reduxjs/toolkit": "^2.6.1",
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
     "framer-motion": "^12.4.10",
     "lodash.throttle": "^4.1.1",
     "postcss": "^8.5.3",

@@ -16,26 +16,42 @@ const Home = lazy(() => import("./pages/Home"));
 const Detail = lazy(() => import("./pages/Detail"));
 const Catalog = lazy(() => import("./pages/Catalog/"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const Auth = lazy(() => import("./pages/Auth"));
+const ProtectedRoute = lazy(() => import("./pages/Auth/ProtectedRoute"));
 
 function App() {
   return (
     <>
-      <VideoModal />
-      <SideBar />
-      <Header />
-      <main className="">
-        <ScrollToTop>
-          <Suspense fallback={<Loader />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path='/:category/:id' element={<Detail />} />
-              <Route path="/:category" element={<Catalog />} />
-              <Route path="*" element={<NotFound/>} />
-            </Routes>
-          </Suspense>
-        </ScrollToTop>
-      </main>
-      <Footer />
+        <VideoModal />
+        <SideBar />
+        <Header />
+        <main className="">
+          <ScrollToTop>
+            <Suspense fallback={<Loader />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path='/:category/:id' element={
+                  <ProtectedRoute>
+                    <Detail />
+                  </ProtectedRoute>
+                } />
+                <Route path="/:category" element={<Catalog />} />
+                <Route path="*" element={<NotFound/>} />
+                <Route path="/sign-in" element={<Auth />} />
+                <Route path="/sign-up" element={<Auth />} />
+                {/* <Route 
+                  path="/movie/:id" 
+                  element={
+                    <ProtectedRoute>
+                      <MovieDetails />
+                    </ProtectedRoute>
+                  } 
+                /> */}
+              </Routes>
+            </Suspense>
+          </ScrollToTop>
+        </main>
+        <Footer />
     </>
   )
 }
