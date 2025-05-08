@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { BsMoonStarsFill } from "react-icons/bs";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -22,6 +22,7 @@ import { cn } from "../../utils/helper";
 import { navLinks } from '../../constants';
 import Logo from "../SideBar/Logo";
 import ThemeMenu from "../ThemeMenu";
+import { FaGem } from "react-icons/fa";
 
 const Header = () => {
   const { openMenu, theme, showThemeOptions } = useTheme();
@@ -75,18 +76,55 @@ const Header = () => {
       <nav
         className={cn(maxWidth, `flex justify-between flex-row items-center`)}
       >
-        <Logo
-          logoColor={cn(
-            isNotFoundPage
+        <div className="flex gap-4">
+          <button
+            type="button"
+            name="menu"
+            className={cn(
+              `inline-block text-[22.75px] md:hidden transition-all duration-300`,
+              isNotFoundPage || isActive
+              ? `${textColor} dark:hover:text-secColor hover:text-black `
+              : ` dark:hover:text-secColor text-secColor`
+            )}
+            onClick={() => setShowSidebar(true)}
+            >
+            <AiOutlineMenu />
+          </button>
+
+          <Logo
+            logoColor={cn(
+              isNotFoundPage
               ? "text-black dark:text-primary"
               : !isNotFoundPage && isActive
               ? "text-black dark:text-primary"
               : "text-primary"
-          )}
-        />
+            )}
+            />
+        </div>
+        <div className="flex gap-2">
 
-        <div className="hidden md:flex flex-row gap-8 items-center text-gray-600 dark:text-gray-300">
-          <ul className="flex flex-row gap-8 capitalize text-[14.75px] font-medium">
+        
+        <div className="flex justify-center items-center my-4">
+          <Link
+            to="/subscription"
+            // className="relative flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-zinc-800 to-black border border-yellow-500 shadow-lg hover:scale-105 transition-transform duration-300"
+            className="relative flex items-center gap-2 px-4 hover:scale-105 transition-transform duration-300"
+          >
+            {/* Sparkle background */}
+            {/* <div className="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-400/10 via-yellow-500/5 to-transparent blur-md" /> */}
+
+            {/* Icon */}
+            <FaGem className="text-yellow-400 text-lg md:text-xl z-10" />
+
+            {/* Text (hidden on small screens) */}
+            <span className="hidden md:inline-block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 font-semibold z-10">
+              Get premium
+            </span>
+          </Link>
+        </div>
+
+        <div className="md:flex flex-row gap-8 items-center text-gray-600 dark:text-gray-300">
+          <ul className="hidden md:flex flex-row gap-8 capitalize text-[14.75px] font-medium">
             {navLinks.map((link) => {
               return (
                 <HeaderNavItem
@@ -99,8 +137,8 @@ const Header = () => {
             })}
           </ul>
 
-          <div className="flex items-center gap-4">
-            <div className="button relative">
+          <div className="flex items-center gap-4 py-3">
+            <div className="hidden md:flex button relative">
               <button
                 name="theme-menu"
                 type="button"
@@ -127,7 +165,7 @@ const Header = () => {
                   afterSignOutUrl="/"
                   appearance={{
                     elements: {
-                      userButtonAvatarBox: "h-8 w-8",
+                      userButtonAvatarBox: "h-6 w-6",
                       userButtonPopoverCard: "bg-white dark:bg-gray-800",
                     }
                   }}
@@ -159,20 +197,7 @@ const Header = () => {
             </SignedOut>
           </div>
         </div>
-
-        <button
-          type="button"
-          name="menu"
-          className={cn(
-            `inline-block text-[22.75px] md:hidden transition-all duration-300`,
-            isNotFoundPage || isActive
-              ? `${textColor} dark:hover:text-secColor hover:text-black `
-              : ` dark:hover:text-secColor text-secColor`
-          )}
-          onClick={() => setShowSidebar(true)}
-        >
-          <AiOutlineMenu />
-        </button>
+        </div>
       </nav>
     </header>
   );

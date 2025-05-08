@@ -10,6 +10,7 @@ import { Loader } from './components/Loader'
 import "react-loading-skeleton/dist/skeleton.css";
 import "swiper/css";
 import Footer from './components/Footer'
+import { SubscriptionPage } from './pages/Subscription'
 
 
 const Home = lazy(() => import("./pages/Home"));
@@ -30,6 +31,7 @@ function App() {
             <Suspense fallback={<Loader />}>
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/subscription" element={<SubscriptionPage />} />
                 <Route path='/:category/:id' element={
                   <ProtectedRoute>
                     <Detail />

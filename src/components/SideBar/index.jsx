@@ -33,13 +33,13 @@ const SideBar = () => {
       {showSidebar && (
         <Overlay>
           <m.nav
-            variants={slideIn("right", "tween", 0, 0.3)}
+            variants={slideIn("left", "tween", 0, 0.3)}
             initial="hidden"
             animate="show"
             exit="hidden"
             ref={ref}
             className={cn(
-              `fixed top-0 right-0 sm:w-[40%] xs:w-[220px] w-[195px] h-full z-[25] overflow-y-auto shadow-md md:hidden p-4 pb-0 dark:text-gray-200 text-gray-600`,
+              `fixed top-0 left-0 sm:w-[40%] xs:w-[220px] w-[195px] h-full z-[25] overflow-y-hidden shadow-md md:hidden p-4 pb-0 dark:text-gray-200 text-gray-600`,
               theme === "Dark" ? "dark-glass" : "light-glass"
             )}
           >
@@ -69,7 +69,7 @@ const SideBar = () => {
               </ul>
 
               <p className="xs:text-[12px] text-[11.75px] mt-auto sm:mb-6 mb-[20px] text-center font-nunito dark:text-gray-200">
-                &copy; 2023 by tMovies. All right reserved.
+                &copy; 2025 by vkmflix. All right reserved.
               </p>
             </div>
           </m.nav>

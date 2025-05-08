@@ -7,9 +7,9 @@ export default {
       screens: {
         xs: "380px",
       },
-      colors: {
-        black: "#191624",
-      },
+      // colors: {
+      //   black: "#191624",
+      // },
 
       textColor: {
         lightGray: "#F1EFEE",
