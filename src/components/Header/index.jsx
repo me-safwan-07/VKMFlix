@@ -84,7 +84,7 @@ const Header = () => {
               `inline-block text-[22.75px] md:hidden transition-all duration-300`,
               isNotFoundPage || isActive
               ? `${textColor} dark:hover:text-secColor hover:text-black `
-              : ` dark:hover:text-secColor text-secColor`
+              : ` dark:hover:text-secColor`
             )}
             onClick={() => setShowSidebar(true)}
             >
@@ -94,10 +94,10 @@ const Header = () => {
           <Logo
             logoColor={cn(
               isNotFoundPage
-              ? "text-black dark:text-primary"
+              ? "text-black dark:text-white"
               : !isNotFoundPage && isActive
-              ? "text-black dark:text-primary"
-              : "text-primary"
+              ? "text-black dark:text-white"
+              : "text-black dark:text-white"
             )}
             />
         </div>

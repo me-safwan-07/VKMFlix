@@ -11,11 +11,11 @@ const HeaderNavItem = ({ link, showBg, isNotFoundPage }) => {
           return cn(
             "nav-link",
             isActive
-              ? ` active ${showBg ? textColor : `text-secColor`}`
+              ? ` active ${showBg ? textColor : `text-black dark:text-white`}`
               : ` ${
                   isNotFoundPage || showBg
-                    ? "text-[#444] dark:text-gray-300 dark:hover:text-secColor hover:text-black"
-                    : "text-gray-300 hover:text-secColor"
+                    ? "text-black dark:text-gray-300 dark:hover:text-black hover:text-black"
+                    : "text-black dark:text-white hover:text-black"
                 }`
           );
         }}
