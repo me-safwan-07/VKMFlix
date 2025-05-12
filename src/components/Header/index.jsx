@@ -104,7 +104,7 @@ const Header = () => {
         <div className="flex gap-2">
 
         
-        <div className="flex justify-center items-center my-4">
+        <div className="flex justify-center items-center my-4 ">
           <Link
             to="/subscription"
             // className="relative flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-zinc-800 to-black border border-yellow-500 shadow-lg hover:scale-105 transition-transform duration-300"
@@ -117,7 +117,7 @@ const Header = () => {
             <FaGem className="text-yellow-400 text-lg md:text-xl z-10" />
 
             {/* Text (hidden on small screens) */}
-            <span className="hidden md:inline-block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 font-semibold z-10">
+            <span className="hidden lg:inline-block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 font-semibold z-10">
               Get premium
             </span>
           </Link>
@@ -180,21 +180,21 @@ const Header = () => {
                 </div> */}
               </div>
             </SignedIn>
-
             <SignedOut>
-              <div className="flex gap-2">
+              <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-5">
                 <SignInButton mode="modal">
-                  <button className="px-4 py-1 text-sm rounded-md bg-transparent border dark: border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                  <button className="px-4 py-1 text-sm xs:text-xs sm:text-sm md:text-base rounded-md bg-transparent border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
                     Login
                   </button>
                 </SignInButton>
                 <SignUpButton mode="modal">
-                  <button className="px-4 py-1 text-sm rounded-md bg-white text-black hover:bg-gray-600 transition-colors border-gray-300">
+                  <button className="px-4 py-1 text-sm xs:text-xs xs:inline-block hidden sm:text-sm md:text-base rounded-md bg-white text-black hover:bg-gray-600 hover:text-white transition-colors border border-gray-300 dark:border-gray-600">
                     Sign Up
                   </button>
                 </SignUpButton>
               </div>
             </SignedOut>
+
           </div>
         </div>
         </div>
