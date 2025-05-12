@@ -39,7 +39,7 @@ const Home = () => {
   return (
     <>
       {/* <Hero movies={popularMovies} onMovieClick={handleMovieClick} /> */}
-      <div className={cn(maxWidth, "lg:mt-12 md:mt-8 sm:mt-6 xs:mt-4 mt-6")}>
+      <div className={cn(maxWidth, "lg:mt-14 md:mt-12 sm:mt-6 xs:mt-12 mt-12")}>
         {sections.map(({ title, category, type }) => (
           <Section 
             title={title} 
