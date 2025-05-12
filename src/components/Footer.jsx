@@ -31,10 +31,10 @@ const Footer = () => {
             return (
               <li key={index} className="text-center">
                 <Link
-                  to="/"
+                  to={title.href}
                   className="hover:text-primary hover:underline  transition-all duration-300 md:text-[15.25px] sm:text-[14.75px] xs:text-[12.75px] text-[12px] font-nunito "
                 >
-                  {title}
+                  {title.name}
                 </Link>
               </li>
             );

@@ -11,6 +11,11 @@ import "react-loading-skeleton/dist/skeleton.css";
 import "swiper/css";
 import Footer from './components/Footer'
 import { SubscriptionPage } from './pages/Subscription'
+import AboutUs from './pages/AboutUs'
+import ContactUs from './pages/ContuctUs'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfService from './pages/TermsOfServices'
+import FAQ from './pages/FAQ'
 
 
 const Home = lazy(() => import("./pages/Home"));
@@ -41,14 +46,12 @@ function App() {
                 <Route path="*" element={<NotFound/>} />
                 <Route path="/sign-in" element={<Auth />} />
                 <Route path="/sign-up" element={<Auth />} />
-                {/* <Route 
-                  path="/movie/:id" 
-                  element={
-                    <ProtectedRoute>
-                      <MovieDetails />
-                    </ProtectedRoute>
-                  } 
-                /> */}
+                <Route path="/about-us" element={<AboutUs />} />
+                <Route path="/contact-us" element={<ContactUs />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/term-of-services" element={<TermsOfService />} />
+                <Route path="/faq" element={<FAQ />} />
+
               </Routes>
             </Suspense>
           </ScrollToTop>

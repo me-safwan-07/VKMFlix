@@ -39,17 +39,50 @@ export const themeOptions = [
 ];
 
 export const footerLinks = [
-  "home",
-  "live",
-  "you must watch",
-  "contact us",
-  "FAQ",
-  "Recent release",
-  "term of services",
-  "premium",
-  "Top IMDB",
-  "About us",
-  "Privacy policy",
+  {
+    name: 'home',
+    href: '/'
+  },
+  {
+    name: "contact us",
+    href: '/contact-us'
+  },
+  {
+    name: "About us",
+    href: '/about-us',
+  },
+  {
+    name: "Recent release",
+    href: "/movie",
+  },
+  {
+    name: "Privacy policy",
+    href: "/privacy-policy"
+  },
+  {
+    name: "term of services",
+    href: "/term-of-services"
+  },
+  {
+    name: "premium",
+    href: "/subscription"
+  },
+  {
+    name: "FAQ",
+    href: "/faq",
+  },
+
+  // "home",
+  // "live",
+  // "you must watch",
+  // "contact us",
+  // "FAQ",
+  // "Recent release",
+  // "term of services",
+  // "premium",
+  // "Top IMDB",
+  // "About us",
+  // "Privacy policy",
 ];
 
 export const sections = [
