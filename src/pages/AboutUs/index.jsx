@@ -37,20 +37,20 @@ const AboutUs = () => {
           {[
             {
               name: "Kirthan",
-              role: "Developer",
-              bio: "Full-stack developer with expertise in React and Node.js. Passionate about creating intuitive user experiences and scalable applications.",
+              // role: "Developer",
+              // bio: "Full-stack developer with expertise in React and Node.js. Passionate about creating intuitive user experiences and scalable applications.",
               img: "/kirthan.jpg",
             },
             {
               name: "Vignesh",
-              role: "UI/UX Designer",
-              bio: "Creative designer focused on crafting beautiful and functional interfaces. Brings user-centered design principles to every project.",
+              // role: "UI/UX Designer",
+              // bio: "Creative designer focused on crafting beautiful and functional interfaces. Brings user-centered design principles to every project.",
               img: "/vignesh.jpg", // Replace with actual image path or use a placeholder
             },
             {
               name: "Manish",
-              role: "Architect",
-              bio: "Experienced in building robust backend systems and APIs. Specializes in database optimization and server-side performance.",
+              // role: "Architect",
+              // bio: "Experienced in building robust backend systems and APIs. Specializes in database optimization and server-side performance.",
               img: "/manish.jpg",
             }
           ].map((member, index) => (
