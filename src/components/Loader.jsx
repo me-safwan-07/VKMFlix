@@ -51,7 +51,7 @@ export const SkelatonLoader= memo(
 export const Loader = memo(() => {
   return (
     <div className="relative dark:bg-black bg-mainColor top-0 left-0 w-screen h-screen flex justify-center items-center">
-      <div className="loader" />
+      {/* <div className="loader" /> */}
     </div>
   );
 });

@@ -109,7 +109,7 @@ const ContactUs = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-gray-800 dark:text-white">Email Us</h3>
-                  <p className="dark:text-gray-300 text-gray-600">support@vkmflix.com</p>
+                  <p className="dark:text-gray-300 text-gray-600">vkmfix@gmail.com</p>
                 </div>
               </div>
               
@@ -144,7 +144,7 @@ const ContactUs = () => {
             Send Us a Message
           </h2>
           
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 dark:text-gray-300">
             <div className="space-y-1">
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Your Name <span className="text-red-500">*</span>

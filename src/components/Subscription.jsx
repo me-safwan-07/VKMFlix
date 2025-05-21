@@ -1,19 +1,20 @@
+"use client";
+
 import { Check, Star } from "lucide-react";
 import { useState, useRef } from "react";
-import confetti from "canvas-confetti";
 import NumberFlow from "@number-flow/react";
 import { buttonVariants } from "./button";
 import { Label } from "./label";
 import { Switch } from "./switch";
 import { useMediaQuery } from "../hooks/use-media-query";
 import { cn } from "../utils/cn";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export function Pricing({
   plans,
-  title = "Simple, Transparent Pricing",
-  description = "Choose the plan that works for you\nAll plans include access to our platform, lead generation tools, and dedicated support.",
+  title = "Choose Your Streaming Plan",
+  description = "Stream the latest movies and TV shows powered by TMDB. All plans include access to thousands of titles and personalized recommendations.",
+  setSelectedPlan,
 }) {
   const [isMonthly, setIsMonthly] = useState(true);
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -21,31 +22,31 @@ export function Pricing({
 
   const handleToggle = (checked) => {
     setIsMonthly(!checked);
-    if (checked && switchRef.current) {
-      const rect = switchRef.current.getBoundingClientRect();
-      const x = rect.left + rect.width / 2;
-      const y = rect.top + rect.height / 2;
+    // if (checked && switchRef.current) {
+    //   const rect = switchRef.current.getBoundingClientRect();
+    //   const x = rect.left + rect.width / 2;
+    //   const y = rect.top + rect.height / 2;
 
-      confetti({
-        particleCount: 50,
-        spread: 60,
-        origin: {
-          x: x / window.innerWidth,
-          y: y / window.innerHeight,
-        },
-        colors: [
-          "hsl(var(--primary))",
-          "hsl(var(--accent))",
-          "hsl(var(--secondary))",
-          "hsl(var(--muted))",
-        ],
-        ticks: 200,
-        gravity: 1.2,
-        decay: 0.94,
-        startVelocity: 30,
-        shapes: ["circle"],
-      });
-    }
+    //   confetti({
+    //     particleCount: 50,
+    //     spread: 60,
+    //     origin: {
+    //       x: x / window.innerWidth,
+    //       y: y / window.innerHeight,
+    //     },
+    //     colors: [
+    //       "hsl(var(--primary))",
+    //       "hsl(var(--accent))",
+    //       "hsl(var(--secondary))",
+    //       "hsl(var(--muted))",
+    //     ],
+    //     ticks: 200,
+    //     gravity: 1.2,
+    //     decay: 0.94,
+    //     startVelocity: 30,
+    //     shapes: ["circle"],
+    //   });
+    // }
   };
 
   return (
@@ -60,7 +61,7 @@ export function Pricing({
       </div>
 
       <div className="flex justify-center mb-10">
-        <label className="relative inline-flex items-center cursor-pointe">
+        <label className="relative inline-flex items-center cursor-pointer">
           <Label>
             <Switch
               ref={switchRef}
@@ -75,7 +76,7 @@ export function Pricing({
         </span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 sm:2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {plans.map((plan, index) => (
           <motion.div
             key={index}
@@ -144,14 +145,12 @@ export function Pricing({
                     className="font-variant-numeric: tabular-nums"
                   />
                 </span>
-                {plan.period !== "Next 3 months" && (
-                  <span className="text-sm font-semibold leading-6 tracking-wide  text-black dark:text-white">
-                    / {plan.period}
-                  </span>
-                )}
+                <span className="text-sm font-semibold leading-6 tracking-wide text-black dark:text-white">
+                  / {plan.period}
+                </span>
               </div>
 
-              <p className="text-xs leading-5  text-black dark:text-white">
+              <p className="text-xs leading-5 text-black dark:text-white">
                 {isMonthly ? "billed monthly" : "billed annually"}
               </p>
 
@@ -166,8 +165,7 @@ export function Pricing({
 
               <hr className="w-full my-4" />
 
-              <Link
-                to={plan.href}
+              <button
                 className={cn(
                   buttonVariants({
                     variant: "outline",
@@ -178,9 +176,10 @@ export function Pricing({
                     ? "bg-primary text-primary-foreground"
                     : "bg-background text-foreground"
                 )}
+                onClick={() => setSelectedPlan(index)}
               >
                 {plan.buttonText}
-              </Link>
+              </button>
               <p className="mt-6 text-xs leading-5 text-muted-foreground">
                 {plan.description}
               </p>
